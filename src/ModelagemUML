@@ -1,0 +1,52 @@
+@startuml
+
+Class Iphone {
+    main
+}
+
+interface FerramentaAparelhoTelefônico {
+    + ligar(): String
+    + atender(): String
+    + iniciarCorrerioVoz(): String
+}
+
+interface FerramentaNavegadorInternet {
+    + exibirPagina(): String
+    + adicionarNovaAba(): String
+    + atualizarPagina(): String
+}
+
+interface FerramentaRepodutorMusicial {
+    + tocar(): String
+    + pausar(): String
+    + selecionarMusica(): String
+}
+
+class AparelhoTelefônico {
+    <<implements>> FerramentaAparelhoTelefônico
+    + ligar(): String
+    + atender(): String
+    + iniciarCorrerioVoz(): String
+}
+
+class NavegadorInternet {
+    <<implements>> FerramentaNavegadorInternet
+    + exibirPagina(): String
+    + adicionarNovaAba(): String
+    + atualizarPagina(): String
+}
+
+class RepodutorMusicial {
+    <<implements>> FerramentaRepodutorMusicial
+    + tocar(): String
+    + pausar(): String
+    + selecionarMusica(): String
+}
+Iphone --> FerramentaAparelhoTelefônico
+Iphone --> FerramentaRepodutorMusicial
+Iphone --> FerramentaNavegadorInternet
+FerramentaAparelhoTelefônico --> AparelhoTelefônico
+FerramentaRepodutorMusicial --> RepodutorMusicial
+FerramentaNavegadorInternet --> NavegadorInternet
+
+@enduml
